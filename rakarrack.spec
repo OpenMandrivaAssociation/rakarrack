@@ -9,6 +9,7 @@ Source0:        http://dfn.dl.sourceforge.net/sourceforge/rakarrack/%{name}-%{ve
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 BuildRequires:	alsa-lib-devel
+BuildRequires:	alsa-utils
 BuildRequires:	desktop-file-utils
 BuildRequires:	fltk-devel
 BuildRequires:	libjack-devel
