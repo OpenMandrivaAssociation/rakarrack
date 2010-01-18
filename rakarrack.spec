@@ -1,7 +1,7 @@
 Summary:	Guitar FX processor emulator
 Name:		rakarrack
 Version:	0.3.0
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPLv2
 Group:		Sound
 URL:		http://rakarrack.sourceforge.net/
