@@ -1,12 +1,13 @@
 Summary:	Guitar FX processor emulator
 Name:		rakarrack
-Version:	0.3.0
-Release:	%mkrel 4
+Version:	0.4.2
+Release:	%mkrel 1
 License:	GPLv2
 Group:		Sound
 URL:		http://rakarrack.sourceforge.net/
-Source0:        http://dfn.dl.sourceforge.net/sourceforge/rakarrack/%{name}-%{version}.tar.gz
-Patch0:		rakarrack-0.3.0-new-fltk.patch
+Source0:	http://dfn.dl.sourceforge.net/sourceforge/rakarrack/%{name}-%{version}.tar.bz2
+Patch0:		rakarrack-0.4.2-new-fltk.patch
+Patch1:		rakarrack-0.4.2-string-format.patch
 BuildRequires:	alsa-lib-devel
 BuildRequires:	alsa-utils
 BuildRequires:	desktop-file-utils
@@ -30,6 +31,7 @@ converter.
 %prep
 %setup -q
 %patch0 -p0
+%patch1 -p0 -b .format
 
 %build
 %configure2_5x
