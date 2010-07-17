@@ -18,6 +18,7 @@ BuildRequires:	libxau-devel
 BuildRequires:	libxdmcp-devel
 BuildRequires:	libxpm-devel
 BuildRequires:	xcb-devel
+BuildRequires:	xft2-devel
 BuildRequires:	libsamplerate-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
