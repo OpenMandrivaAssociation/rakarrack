@@ -20,6 +20,7 @@ BuildRequires:	libxpm-devel
 BuildRequires:	xcb-devel
 BuildRequires:	xft2-devel
 BuildRequires:	libsamplerate-devel
+BuildRequires:	sndfile-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
