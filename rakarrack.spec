@@ -1,27 +1,26 @@
-Summary:	Guitar FX processor emulator
-Name:		rakarrack
-Version:	0.5.8
-Release:	%mkrel 1
-License:	GPLv2
-Group:		Sound
-URL:		http://rakarrack.sourceforge.net/
-Source0:	http://dfn.dl.sourceforge.net/sourceforge/rakarrack/%{name}-%{version}_Equinox.tar.bz2
-Patch0:		rakarrack-0.4.2-new-fltk.patch
-Patch1:		rakarrack-0.4.2-string-format.patch
-BuildRequires:	alsa-lib-devel
-BuildRequires:	alsa-utils
-BuildRequires:	desktop-file-utils
-BuildRequires:	fltk-devel
-BuildRequires:	libjack-devel
-BuildRequires:	libpng-devel
-BuildRequires:	libxau-devel
-BuildRequires:	libxdmcp-devel
-BuildRequires:	libxpm-devel
-BuildRequires:	xcb-devel
-BuildRequires:	xft2-devel
-BuildRequires:	libsamplerate-devel
-BuildRequires:	sndfile-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Summary:    Guitar FX processor emulator
+Name:       rakarrack
+Version:    0.6.1
+Release:    %mkrel 1
+License:    GPLv2
+Group:      Sound
+URL:        http://rakarrack.sourceforge.net/
+Source0:    http://dfn.dl.sourceforge.net/sourceforge/rakarrack/%{name}-%{version}.tar.bz2
+Patch0:     rakarrack-0.6.1-strfmt.patch
+BuildRequires:  alsa-lib-devel
+BuildRequires:  alsa-utils
+BuildRequires:  desktop-file-utils
+BuildRequires:  fltk-devel
+BuildRequires:  libjack-devel
+BuildRequires:  libpng-devel
+BuildRequires:  libxau-devel
+BuildRequires:  libxdmcp-devel
+BuildRequires:  libxpm-devel
+BuildRequires:  xcb-devel
+BuildRequires:  xft2-devel
+BuildRequires:  libsamplerate-devel
+BuildRequires:  sndfile-devel
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Rakarrack is a FX processor emulator for guitar and other purposes. It provides
@@ -36,9 +35,9 @@ monophonic MIDI converter. Patch files from previous versions can be converted
 using the provided rakconvert script.
 
 %prep
-%setup -q -n %{name}-%{version}_Equinox
-%patch0 -p0
-%patch1 -p0 -b .format
+%setup -q
+%patch0 -p1
+sed -ie 's/<Fl\//<FL\//g' src/global.h src/process.C
 
 %build
 %configure2_5x
@@ -51,14 +50,6 @@ rm -rf %{buildroot}
 
 %clean
 rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post
-%update_desktop_database
-
-%postun
-%clean_desktop_database
-%endif
 
 %files
 %defattr(-,root,root,0755)
