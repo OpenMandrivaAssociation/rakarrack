@@ -1,7 +1,7 @@
 Summary:    Guitar FX processor emulator
 Name:       rakarrack
 Version:    0.6.1
-Release:    %mkrel 1
+Release:    2
 License:    GPLv2
 Group:      Sound
 URL:        http://rakarrack.sourceforge.net/
@@ -11,26 +11,26 @@ BuildRequires:  alsa-lib-devel
 BuildRequires:  alsa-utils
 BuildRequires:  desktop-file-utils
 BuildRequires:  fltk-devel
-BuildRequires:  libjack-devel
+BuildRequires:  jackit-devel
 BuildRequires:  libpng-devel
 BuildRequires:  libxau-devel
 BuildRequires:  libxdmcp-devel
 BuildRequires:  libxpm-devel
 BuildRequires:  xcb-devel
-BuildRequires:  xft2-devel
+BuildRequires:  libxft-devel
 BuildRequires:  libsamplerate-devel
 BuildRequires:  sndfile-devel
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Rakarrack is a FX processor emulator for guitar and other purposes. It provides
-many effects: tcompressor, expander, noise gate, graphic equalizer, parametric 
-equalizer, exciter, shuffle, convolotron, valve, flanger, dual flange, chorus, 
-musicaldelay, arpie, echo with reverse playback, musical delay, reverb, 
-digital phaser, analogic phaser, synthfilter, varyband, ring, wah-wah, 
-alien-wah, mutromojo, harmonizer, looper and four flexible distortion modules 
-including sub-octave modulation and dirty octave up. It features real time 
-processing, JACK support, an online tuner, bank and preset managment, and a 
+many effects: tcompressor, expander, noise gate, graphic equalizer, parametric
+equalizer, exciter, shuffle, convolotron, valve, flanger, dual flange, chorus,
+musicaldelay, arpie, echo with reverse playback, musical delay, reverb,
+digital phaser, analogic phaser, synthfilter, varyband, ring, wah-wah,
+alien-wah, mutromojo, harmonizer, looper and four flexible distortion modules
+including sub-octave modulation and dirty octave up. It features real time
+processing, JACK support, an online tuner, bank and preset managment, and a
 monophonic MIDI converter. Patch files from previous versions can be converted
 using the provided rakconvert script.
 
