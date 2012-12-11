@@ -7,7 +7,9 @@ Group:      Sound
 URL:        http://rakarrack.sourceforge.net/
 Source0:    http://dfn.dl.sourceforge.net/sourceforge/rakarrack/%{name}-%{version}.tar.bz2
 Patch0:     rakarrack-0.6.1-strfmt.patch
-BuildRequires:  alsa-lib-devel
+BuildRequires:  pkgconfig(alsa)
+BuildRequires:  pkgconfig(cairo)
+BuildRequires:  pkgconfig(pixman-1)
 BuildRequires:  alsa-utils
 BuildRequires:  desktop-file-utils
 BuildRequires:  fltk-devel
@@ -20,7 +22,6 @@ BuildRequires:  xcb-devel
 BuildRequires:  libxft-devel
 BuildRequires:  libsamplerate-devel
 BuildRequires:  sndfile-devel
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Rakarrack is a FX processor emulator for guitar and other purposes. It provides
@@ -44,12 +45,7 @@ sed -ie 's/<Fl\//<FL\//g' src/global.h src/process.C
 %make
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std
-
-%clean
-rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,0755)
@@ -65,3 +61,50 @@ rm -rf %{buildroot}
 %{_datadir}/applications/%{name}.desktop
 %{_mandir}/man1/*.1*
 
+
+
+%changelog
+* Sun Dec 25 2011 Frank Kober <emuse@mandriva.org> 0.6.1-2
++ Revision: 745140
+- rebuild with fltk 1.3
+
+* Sun Nov 28 2010 Frank Kober <emuse@mandriva.org> 0.6.1-1mdv2011.0
++ Revision: 602431
+- new version 0.6.1
+  o rediff patch1, replace patch0 by script
+
+* Sat Jul 17 2010 Frank Kober <emuse@mandriva.org> 0.5.8-1mdv2011.0
++ Revision: 554542
+- add another missing BR
+- add missing BR
+- new version 0.5.8 (Equinox)
+- update description
+- adjust file list
+- old patches still functional
+
+* Mon Apr 05 2010 Ahmad Samir <ahmadsamir@mandriva.org> 0.4.2-1mdv2010.1
++ Revision: 531497
+- new upstream release 0.4.2
+- rediff patch0
+- add patch to fix string format
+
+* Mon Jan 18 2010 Jérôme Brenier <incubusss@mandriva.org> 0.3.0-4mdv2010.1
++ Revision: 493155
+- rebuild for new fltk
+
+* Tue Sep 15 2009 Thierry Vignaud <tv@mandriva.org> 0.3.0-3mdv2010.0
++ Revision: 442668
+- rebuild
+
+* Sun Dec 14 2008 Funda Wang <fwang@mandriva.org> 0.3.0-2mdv2009.1
++ Revision: 314174
+- build with new fltk
+
+* Tue Nov 25 2008 Oden Eriksson <oeriksson@mandriva.com> 0.3.0-1mdv2009.1
++ Revision: 306679
+- fix deps (alsa-utils)
+- import rakarrack
+
+
+* Tue Nov 25 2008 Oden Eriksson <oeriksson@mandriva.com> 0.3.0-1mdv2009.0
+- initial Mandriva package
