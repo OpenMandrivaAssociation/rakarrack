@@ -4,7 +4,7 @@ Version:    0.6.1
 Release:    3
 License:    GPLv2
 Group:      Sound
-URL:        http://rakarrack.sourceforge.net/
+URL:        https://rakarrack.sourceforge.net/
 Source0:    http://dfn.dl.sourceforge.net/sourceforge/rakarrack/%{name}-%{version}.tar.bz2
 Patch0:     rakarrack-0.6.1-strfmt.patch
 BuildRequires:  pkgconfig(alsa)
